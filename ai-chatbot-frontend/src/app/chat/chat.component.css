@@ -1,0 +1,133 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make the container take up the full viewport height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0; /* Optional background color for the page */
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #0056b3;
+}
+
+.message-container {
+  flex-grow: 1; /* Messages take up the remaining vertical space */
+  padding: 20px;
+  overflow-y: auto; /* Enable scrolling for long conversations */
+}
+
+.message {
+  background-color: #fff;
+  color: #333;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  word-break: break-word;
+}
+
+.message:nth-child(even) {
+  background-color: #e6f7ff;
+}
+
+.user-message {
+  background-color: #d4edda;
+  color: #155724;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #cce5ff;
+  color: #004085;
+  align-self: flex-start;
+}
+
+.input-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center the input and button horizontally */
+  align-items: center; /* Vertically align items in the container */
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9; /* Optional background for input area */
+}
+
+input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  max-width: 600px; /* Optional: Limit the maximum width of the input */
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Design (adjust as needed) */
+@media (max-width: 768px) {
+  .chat-header h1 {
+      font-size: 1.5em;
+  }
+
+  .message-container {
+      padding: 15px;
+  }
+
+  .input-container {
+      padding: 15px;
+  }
+
+  input {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-header h1 {
+      font-size: 1.2em;
+  }
+
+  .input-container {
+      flex-direction: column;
+      align-items: stretch; /* Make input and button take full width */
+  }
+
+  input {
+      margin-right: 0;
+      margin-bottom: 10px;
+      max-width: none; /* Remove max-width on small screens */
+  }
+}
